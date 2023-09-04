@@ -5,11 +5,16 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'app/app_module.dart';
 import 'app/app_widget.dart';
+import 'app/core/database/hive_config.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp]); //Não permite orientacao paisagem
+  //Não permite orientacao paisagem
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  //initialize FlutterNativeSplash
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  //initialize hive
+  HiveConfig.start();
+  //inicialize Modular
   runApp(ModularApp(module: AppModule(), child: const AppWidget()));
 }

@@ -40,9 +40,13 @@ dependencies:
   mobx:
   path_provider:
   localization:
+  hive:
+  hive_flutter:
+  flutter_svg:
+  flutter_fast_forms: 
+
 
 dev_dependencies:
-  flutter_native_splash:
   flutter_test:
     sdk: flutter
 
@@ -52,8 +56,11 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  flutter_native_splash:
   mobx_codegen: 
   build_runner: 
+  hive_generator: 
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -70,6 +77,7 @@ flutter:
   assets:
     - assets/fonts/
     - assets/images/
+    - assets/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

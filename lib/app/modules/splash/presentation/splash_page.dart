@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -58,22 +59,27 @@ class SplashPageState extends State<SplashPage> {
                     Positioned(
                       left: 0,
                       top: 0,
-                      child: Container(
-                        width: 304,
-                        height: 52,
-                        decoration: ShapeDecoration(
-                          color: Color(0xFF5B67CA),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(14),
+                      child: GestureDetector(
+                        onTap: () {
+                          Modular.to.pushNamed('/home');
+                        },
+                        child: Container(
+                          width: 304,
+                          height: 52,
+                          decoration: ShapeDecoration(
+                            color: const Color(0xFF5B67CA),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14),
+                            ),
+                            shadows: const [
+                              BoxShadow(
+                                color: Color(0xFFF1F6FF),
+                                blurRadius: 13,
+                                offset: Offset(-3, 7),
+                                spreadRadius: 0,
+                              )
+                            ],
                           ),
-                          shadows: [
-                            BoxShadow(
-                              color: Color(0xFFF1F6FF),
-                              blurRadius: 13,
-                              offset: Offset(-3, 7),
-                              spreadRadius: 0,
-                            )
-                          ],
                         ),
                       ),
                     ),
